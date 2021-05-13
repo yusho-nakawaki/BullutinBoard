@@ -53,7 +53,6 @@ class PlaceholderFragment : Fragment(), RecyclerViewHolderBullutin.ItemClickList
 
         viewModel.posts.observe(this) {
 
-            posts = listOf(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
             posts = it
 
             val bullutinRecyclerView = view?.findViewById<RecyclerView>(R.id.recycleview_bullutin)!!
