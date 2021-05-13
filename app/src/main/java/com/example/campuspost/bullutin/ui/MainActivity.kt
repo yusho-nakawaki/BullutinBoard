@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && data != null) {
 //            val message = data.getStringExtra("message")
 //            println(message)
-            sectionsPagerAdapter.placeholderFragment.addPost(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
+//            sectionsPagerAdapter.placeholderFragment.addPost(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
         } else if(resultCode == Activity.RESULT_CANCELED) {
 
         }

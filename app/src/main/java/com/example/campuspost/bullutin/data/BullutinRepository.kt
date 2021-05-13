@@ -6,7 +6,7 @@ class BullutinRepository private constructor(private val bullutinDao: BullutinDa
         bullutinDao.addPost(post)
     }
 
-    fun getPosts() = bullutinDao.getPosts()
+    suspend fun getPosts() = bullutinDao.getPosts()
 
 
     companion object {

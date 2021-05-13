@@ -36,7 +36,7 @@ class PlaceholderFragment : Fragment(), RecyclerViewHolderBullutin.ItemClickList
     private lateinit var recyclerView: RecyclerView
     private lateinit var viewAdapter: RecyclerView.Adapter<*>
     private lateinit var viewManager: RecyclerView.LayoutManager
-    var posts = mutableListOf<Bullutin>()
+    var posts = listOf<Bullutin>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,11 @@ class PlaceholderFragment : Fragment(), RecyclerViewHolderBullutin.ItemClickList
         val viewModel = ViewModelProvider(this, faculty)
             .get(BullutinViewModel::class.java)
 
-        viewModel.getPosts().observe(this, Observer {
+        viewModel.posts.observe(this) {
+
+            posts = listOf(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
+            posts = it
+
             val bullutinRecyclerView = view?.findViewById<RecyclerView>(R.id.recycleview_bullutin)!!
             viewAdapter = RecyclerAdapterBullutin(view?.context!!, this, posts)
             recyclerView = bullutinRecyclerView.apply {
@@ -64,17 +68,34 @@ class PlaceholderFragment : Fragment(), RecyclerViewHolderBullutin.ItemClickList
 
                 // specify an viewAdapter (see also next example)
                 adapter = viewAdapter
-                posts = it as MutableList<Bullutin>
+
             }
-        })
+        }
+
+//        viewModel.getPosts().observe(this, Observer {
+//            val bullutinRecyclerView = view?.findViewById<RecyclerView>(R.id.recycleview_bullutin)!!
+//            viewAdapter = RecyclerAdapterBullutin(view?.context!!, this, posts)
+//            recyclerView = bullutinRecyclerView.apply {
+//                // use this setting to improve performance if you know that changes
+//                // in content do not change the layout size of the RecyclerView
+//                setHasFixedSize(true)
+//
+//                // use a linear layout manager
+//                layoutManager = viewManager
+//
+//                // specify an viewAdapter (see also next example)
+//                adapter = viewAdapter
+//                posts = it as MutableList<Bullutin>
+//            }
+//        })
     }
 
-    fun addPost(post: Bullutin) {
-        val faculty = BullutinInjectorUtils.provideBullutinViewModelFaculty()
-        val viewModel = ViewModelProvider(this, faculty)
-            .get(BullutinViewModel::class.java)
-        viewModel.addPost(post)
-    }
+//    fun addPost(post: Bullutin) {
+//        val faculty = BullutinInjectorUtils.provideBullutinViewModelFaculty()
+//        val viewModel = ViewModelProvider(this, faculty)
+//            .get(BullutinViewModel::class.java)
+//        viewModel.addPost(post)
+//    }
 
 
     override fun onCreateView(
