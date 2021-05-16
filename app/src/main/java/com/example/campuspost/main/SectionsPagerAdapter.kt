@@ -1,11 +1,11 @@
-package com.example.campuspost.bullutin.ui
+package com.example.campuspost.main
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.example.campuspost.R
-import com.example.campuspost.ui.main.PlaceholderFragment
+import com.example.campuspost.bullutin.ui.BullutinFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,
@@ -20,12 +20,12 @@ private val TAB_TITLES = arrayOf(
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager)
     : FragmentPagerAdapter(fm) {
 
-    val placeholderFragment = PlaceholderFragment()
+    val placeholderFragment = BullutinFragment()
 
     override fun getItem(position: Int): Fragment {
         // getItem is called to instantiate the fragment for the given page.
         // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1)
+        return BullutinFragment.newInstance(position + 1)
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

@@ -1,11 +1,7 @@
 package com.example.campuspost.bullutin.data
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.recyclerview.widget.RecyclerView
-import com.example.campuspost.R
-import com.example.campuspost.ui.main.RecyclerAdapterBullutin
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlin.coroutines.resume
@@ -14,15 +10,15 @@ import kotlin.coroutines.suspendCoroutine
 class BullutinDao {
 
     private var postList = mutableListOf<Bullutin>()
-    private val posts = MutableLiveData<List<Bullutin>>()
+//    private val posts = MutableLiveData<List<Bullutin>>()
 
-    init {
-        posts.value = postList
-    }
+//    init {
+//        posts.value = postList
+//    }
 
     fun addPost(post: Bullutin) {
         postList.add(post)
-        posts.value = postList
+//        posts.value = postList
     }
 
     suspend fun getPosts(): List<Bullutin>? {
@@ -89,7 +85,6 @@ class BullutinDao {
         }
 
 //        postList.add(Bullutin("email", "88888888", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。ここに投稿したメッセージが現れるよ。ワクワク。。。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
-//        return postList
     }
 
 }

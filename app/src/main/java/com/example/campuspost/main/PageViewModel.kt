@@ -1,4 +1,4 @@
-package com.example.campuspost.bullutin.ui
+package com.example.campuspost.main
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

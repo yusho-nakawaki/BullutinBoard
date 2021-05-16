@@ -9,13 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BullutinBoard">
+        <activity android:name=".bullutin.ui.ItemBullutinActivity"></activity>
         <activity android:name=".bullutin.ui.InsertPost">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".bullutin.ui.MainActivity" />
+                android:value=".main.MainActivity" />
         </activity>
         <activity
-            android:name=".bullutin.ui.MainActivity"
+            android:name=".main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.BullutinBoard.NoActionBar">
             <intent-filter>

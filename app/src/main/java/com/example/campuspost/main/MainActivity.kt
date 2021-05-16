@@ -1,4 +1,4 @@
-package com.example.campuspost.bullutin.ui
+package com.example.campuspost.main
 
 import android.app.Activity
 import android.content.Intent
@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
 import com.example.campuspost.R
 import com.example.campuspost.bullutin.data.Bullutin
+import com.example.campuspost.bullutin.ui.InsertPost
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && data != null) {
 //            val message = data.getStringExtra("message")
 //            println(message)
-//            sectionsPagerAdapter.placeholderFragment.addPost(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
+//            sectionsPagerAdapter.placeholderFragment.posts.add(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
         } else if(resultCode == Activity.RESULT_CANCELED) {
 
         }

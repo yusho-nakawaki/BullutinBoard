@@ -1,5 +1,6 @@
 package com.example.campuspost.bullutin.ui
 
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,10 +20,16 @@ class BullutinViewModel(private val bullutinRepository: BullutinRepository): Vie
     private val _posts = MutableLiveData<List<Bullutin>>()
     val posts: LiveData<List<Bullutin>> = _posts
 
-    init {
-        //非同期処理
+
+    fun getPosts() {
         viewModelScope.launch {
             _posts.value = bullutinRepository.getPosts()
         }
     }
+
+    fun startBullutinItem(post: Bullutin) {
+        println(post)
+        println(post.message)
+    }
+
 }
