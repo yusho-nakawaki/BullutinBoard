@@ -16,7 +16,6 @@ import com.task.ui.base.listeners.RecyclerItemListener
 
 // swiftで言うと、tableViewのextensionのところ
 class BullutinAdapter(private val context: Context,
-//                      private val itemClickListener: BullutinViewHolder.ItemClickListener,
                       private val itemList:List<Bullutin>,
                       private val bullutinViewModel: BullutinViewModel
                       )
@@ -41,8 +40,6 @@ class BullutinAdapter(private val context: Context,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BullutinViewHolder {
-//        val layoutInflater = LayoutInflater.from(context)
-//        val mView = layoutInflater.inflate(R.layout.bullutin_board_cell, parent, false)
         val itemBinding = BullutinBoardCellBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return BullutinViewHolder(itemBinding)
     }
