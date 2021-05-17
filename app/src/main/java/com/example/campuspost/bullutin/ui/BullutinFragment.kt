@@ -21,8 +21,7 @@ import com.example.campuspost.bullutin.utility.BullutinInjectorUtils
 import com.example.campuspost.databinding.FragmentMainBinding
 
 
-class BullutinFragment
-    : Fragment(), BullutinViewHolder.ItemClickListener {
+class BullutinFragment: Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
     private lateinit var bullutinViewModel: BullutinViewModel
@@ -84,7 +83,7 @@ class BullutinFragment
         bullutinViewModel.posts.observe(this) {
             val bullutinRecyclerView =
                 view?.findViewById<RecyclerView>(R.id.recycleview_bullutin)!!
-            bullutinAdapter = BullutinAdapter(view?.context!!, this, it, bullutinViewModel)
+            bullutinAdapter = BullutinAdapter(view?.context!!, it, bullutinViewModel)
             viewManager = LinearLayoutManager(view?.context,
                 LinearLayoutManager.VERTICAL, false)
             recyclerView = bullutinRecyclerView.apply {
