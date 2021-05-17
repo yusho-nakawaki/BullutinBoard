@@ -1,5 +1,6 @@
 package com.example.campuspost.bullutin.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,7 @@ class BullutinFragment
         bullutinViewModel = ViewModelProvider(this, faculty).get(BullutinViewModel::class.java)
 
         handlePosts()
+        openItemBullutin()
         bullutinViewModel.getPosts()
 
     }
@@ -93,6 +95,15 @@ class BullutinFragment
         }
     }
 
+
+    // 画面遷移
+    private fun openItemBullutin() {
+        bullutinViewModel.openItemBullutin.observe(this) {
+            val intent = Intent(context, ItemBullutinActivity::class.java)
+            intent.putExtra("item-post", it.message)
+            startActivity(intent)
+        }
+    }
 
 
 

@@ -58,6 +58,9 @@ class BullutinAdapter(private val context: Context,
 
         holder?.let {
 
+            it.allContainer.setOnClickListener{
+                onItemClickListener.onItemSelected(itemList[position])
+            }
             it.postMessage.text = itemList[position].message
             it.postTime.text = itemList[position].time
             it.userName.text = itemList[position].name

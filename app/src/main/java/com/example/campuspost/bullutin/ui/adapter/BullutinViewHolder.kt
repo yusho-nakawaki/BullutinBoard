@@ -19,6 +19,7 @@ class BullutinViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         }
     }
 
+    val allContainer: LinearLayout = view.findViewById(R.id.allcontainer_bullutin)
     var userPicuture: ImageView = view.findViewById(R.id.imageview_bullutin_main)
     var userName: TextView = view.findViewById(R.id.username_textview_bullutin)
     var postTime: TextView = view.findViewById(R.id.posttime_textview_bullutin)

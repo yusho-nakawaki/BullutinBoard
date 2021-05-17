@@ -18,7 +18,11 @@ class BullutinViewModel(private val bullutinRepository: BullutinRepository): Vie
     //ここにデータを置く
     // viewにはおかない
     private val _posts = MutableLiveData<List<Bullutin>>()
-    val posts: LiveData<List<Bullutin>> = _posts
+    val posts: LiveData<List<Bullutin>> get() = _posts
+
+    //画面遷移用
+    private val _openItemBullutin = MutableLiveData<Bullutin>()
+    val openItemBullutin: LiveData<Bullutin> get() = _openItemBullutin
 
 
     fun getPosts() {
@@ -28,8 +32,7 @@ class BullutinViewModel(private val bullutinRepository: BullutinRepository): Vie
     }
 
     fun startBullutinItem(post: Bullutin) {
-        println(post)
-        println(post.message)
+        _openItemBullutin.value = post
     }
 
 }
