@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BullutinBoard">
         <activity android:name=".bullutin.ui.ItemBullutinActivity"></activity>
-        <activity android:name=".bullutin.ui.InsertPost">
+        <activity android:name=".bullutin.ui.InsertPostAcitivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.MainActivity" />

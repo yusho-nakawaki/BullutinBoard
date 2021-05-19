@@ -1,52 +1,25 @@
 package com.example.campuspost.main
 
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.tabs.TabLayout
-import androidx.viewpager.widget.ViewPager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI.setupWithNavController
 import com.example.campuspost.R
-import com.example.campuspost.bullutin.data.Bullutin
-import com.example.campuspost.bullutin.ui.InsertPost
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val viewPager: ViewPager = findViewById(R.id.view_pager)
-        viewPager.adapter = sectionsPagerAdapter
-        val tabs: TabLayout = findViewById(R.id.communityTab)
-        tabs.setupWithViewPager(viewPager)
-        val fab: FloatingActionButton = findViewById(R.id.fab)
+        // nav_host_fragmentはactivity_mainのfragment
+        // nav_host_fragmentが4つのfragmentのうちの一つとイコールになる
+        val navController = findNavController(R.id.nav_host_fragment)
+        setupWithNavController(bottom_navigation, navController)
 
-
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-
-            val intent = Intent(this, InsertPost::class.java)
-            startActivityForResult(intent, 9)
-        }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode != 9) { return }
-
-        if (resultCode == Activity.RESULT_OK && data != null) {
-//            val message = data.getStringExtra("message")
-//            println(message)
-//            sectionsPagerAdapter.placeholderFragment.posts.add(Bullutin("email", "mirrative", "2021/05/03 12:00:00", "postId", "ここに投稿したメッセージが現れるよ。", null, null, null, 20, arrayOf("0_nil"), 10, arrayOf("0_nil"), 0))
-        } else if(resultCode == Activity.RESULT_CANCELED) {
-
-        }
-    }
 }

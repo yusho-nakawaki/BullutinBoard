@@ -1,7 +1,6 @@
 package com.example.campuspost.bullutin.data
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import kotlin.coroutines.resume
@@ -10,7 +9,6 @@ import kotlin.coroutines.suspendCoroutine
 class BullutinDao {
 
     private var postList = mutableListOf<Bullutin>()
-//    private val posts = MutableLiveData<List<Bullutin>>()
 
 //    init {
 //        posts.value = postList
@@ -18,7 +16,6 @@ class BullutinDao {
 
     fun addPost(post: Bullutin) {
         postList.add(post)
-//        posts.value = postList
     }
 
     suspend fun getPosts(): List<Bullutin>? {

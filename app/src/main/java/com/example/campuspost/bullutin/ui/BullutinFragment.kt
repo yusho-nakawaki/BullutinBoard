@@ -10,30 +10,23 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.campuspost.R
-import com.example.campuspost.bullutin.data.Bullutin
-import com.example.campuspost.main.PageViewModel
 import com.example.campuspost.bullutin.ui.adapter.BullutinAdapter
-import com.example.campuspost.bullutin.ui.adapter.BullutinViewHolder
 import com.example.campuspost.bullutin.utility.BullutinInjectorUtils
-import com.example.campuspost.databinding.FragmentMainBinding
+import com.example.campuspost.databinding.FragmentBullutinBinding
 
 
 class BullutinFragment: Fragment() {
 
-    private lateinit var pageViewModel: PageViewModel
     private lateinit var bullutinViewModel: BullutinViewModel
+    private lateinit var binding: FragmentBullutinBinding
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var bullutinAdapter: BullutinAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
 
-    private lateinit var binding: FragmentMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        pageViewModel = ViewModelProvider(this).get(PageViewModel::class.java).apply {
-            setIndex(arguments?.getInt(ARG_SECTION_NUMBER) ?: 1)
-        }
 
         initViewBinding()
 
@@ -51,7 +44,7 @@ class BullutinFragment: Fragment() {
     }
 
     fun initViewBinding() {
-        binding = FragmentMainBinding.inflate(layoutInflater)
+        binding = FragmentBullutinBinding.inflate(layoutInflater)
 //        val view = binding.root
 //        setContentView(view)
     }
@@ -69,7 +62,7 @@ class BullutinFragment: Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_main, container, false)
+        val view = inflater.inflate(R.layout.fragment_bullutin, container, false)
 
         handlePosts()
         openItemBullutin()
@@ -108,6 +101,7 @@ class BullutinFragment: Fragment() {
 
 
 
+    // SectionsPageAdapterでインスタンス
     companion object {
         private const val ARG_SECTION_NUMBER = "section_number"
 
