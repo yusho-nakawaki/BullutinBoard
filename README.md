@@ -4,5 +4,4 @@ kotlin
 
 main/java/com/example/campuspost/bullutin/ にmvvm設計のファイルが入っています
 
-
-<img width="483" alt="スクリーンショット 2021-05-17 11 32 59" src="https://user-images.githubusercontent.com/75678016/118425220-aff84380-b703-11eb-9baa-8ff272504da4.png">
+<img width="483" alt="スクリーンショット 2021-05-19 20 00 27" src="https://user-images.githubusercontent.com/75678016/118802526-2dc37700-b8dd-11eb-844b-d322173cf31c.png">
