@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.campuspost.R
 import com.example.campuspost.bullutin.data.Bullutin
 import com.example.campuspost.bullutin.ui.BullutinViewModel
+import com.example.campuspost.databinding.BullutinBoardCellBinding
 import com.task.ui.base.listeners.RecyclerItemListener
 
 
 // swiftで言うと、tableViewのextensionのところ
 class BullutinAdapter(private val context: Context,
-                      private val itemClickListener: BullutinViewHolder.ItemClickListener,
                       private val itemList:List<Bullutin>,
                       private val bullutinViewModel: BullutinViewModel
                       )
@@ -40,48 +40,14 @@ class BullutinAdapter(private val context: Context,
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BullutinViewHolder {
-        val layoutInflater = LayoutInflater.from(context)
-        val mView = layoutInflater.inflate(R.layout.bullutin_board_cell, parent, false)
-
-        mView.setOnClickListener { view ->
-            mRecyclerView?.let {
-                itemClickListener.onItemClick(view, it.getChildAdapterPosition(view))
-            }
-        }
-
-        return BullutinViewHolder(mView)
+        val itemBinding = BullutinBoardCellBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BullutinViewHolder(itemBinding)
     }
 
 
     override fun onBindViewHolder(holder: BullutinViewHolder, position: Int) {
-
-
         holder?.let {
-
-            it.allContainer.setOnClickListener{
-                onItemClickListener.onItemSelected(itemList[position])
-            }
-            it.postMessage.text = itemList[position].message
-            it.postTime.text = itemList[position].time
-            it.userName.text = itemList[position].name
-//            it.userPicuture.setImageURI(null)
-//            it.userPicuture.setImageURI(Uri.parse("https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Fminami373hamabe&psig=AOvVaw0tzCDl99uTtf2aV0JMOGKt&ust=1620362756287000&source=images&cd=vfe&ved=0CAoQjRxqFwoTCJi7juaftPACFQAAAAAdAAAAABAD"))
-            it.goodCountLabel.text = "${itemList[position].good}"
-            it.repeatCountLabel.text = "${itemList[position].remessage}"
-            it.commentCountLabel.text = "${itemList[position].comment}"
-
-            if (itemList[position].photoUrl == null) {
-                it.photoContainer.visibility = View.GONE
-            } else {
-
-            }
-
-            if (itemList[position].isRemessagePostId == null) {
-                it.remessageContainer.visibility = View.GONE
-            } else {
-
-            }
-
+            holder.bind(itemList[position], onItemClickListener)
         }
     }
 

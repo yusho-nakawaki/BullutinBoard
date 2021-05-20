@@ -3,7 +3,6 @@ package com.example.campuspost.bullutin.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.campuspost.R
-import com.example.campuspost.main.MainActivity
 import kotlinx.android.synthetic.main.activity_item_bullutin.*
 
 

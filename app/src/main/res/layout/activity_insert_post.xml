@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bullutin.ui.InsertPost">
+    tools:context=".bullutin.ui.InsertPostAcitivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,58 +56,94 @@
             android:paddingTop="5dp">
 
             <FrameLayout
+                android:id="@+id/imageContainer1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="invisible">
 
                 <ImageView
                     android:id="@+id/image1_insertpost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+                <ImageView
+                    android:id="@+id/cancelImage1"
+                    android:layout_width="38dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="right"
+                    app:srcCompat="@drawable/ic_baseline_clear_24" />
 
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/imageContainer2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="invisible">
 
                 <ImageView
                     android:id="@+id/image2_insertpost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+                <ImageView
+                    android:id="@+id/cancelImage2"
+                    android:layout_width="38dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="right"
+                    app:srcCompat="@drawable/ic_baseline_clear_24" />
 
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/imageContainer3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="invisible">
 
                 <ImageView
                     android:id="@+id/image3_insertpost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+                <ImageView
+                    android:id="@+id/cancelImage3"
+                    android:layout_width="38dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="right"
+                    app:srcCompat="@drawable/ic_baseline_clear_24" />
 
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/imageContainer4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:visibility="invisible">
 
                 <ImageView
                     android:id="@+id/image4_insertpost"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     app:srcCompat="@drawable/ic_baseline_favorite_24" />
+
+                <ImageView
+                    android:id="@+id/cancelImage4"
+                    android:layout_width="38dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="right"
+                    app:srcCompat="@drawable/ic_baseline_clear_24" />
 
             </FrameLayout>
         </LinearLayout>

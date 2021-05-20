@@ -9,7 +9,7 @@ import com.example.campuspost.bullutin.data.Bullutin
 import com.example.campuspost.bullutin.data.BullutinRepository
 import kotlinx.coroutines.launch
 
-class BullutinViewModel(private val bullutinRepository: BullutinRepository): ViewModel() {
+    class BullutinViewModel(private val bullutinRepository: BullutinRepository): ViewModel() {
 
 //    suspend fun getPosts() = bullutinRepository.getPosts()
 //    fun addPost(post: Bullutin) = bullutinRepository.addPost(post)

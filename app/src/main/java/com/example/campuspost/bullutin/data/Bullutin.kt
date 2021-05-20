@@ -1,5 +1,8 @@
 package com.example.campuspost.bullutin.data
 
+//変数名がよくわからない
+//自分だけわかるような変数はよくない
+//今回だけはios版(昔作った自分だけしかわからないアプリ)と合わせるためにこのままにします
 data class Bullutin(
         val email: String,
         val name: String,

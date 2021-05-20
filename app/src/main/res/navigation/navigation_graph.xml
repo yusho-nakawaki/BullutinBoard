@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_graph.xml"
+    app:startDestination="@id/navi_main">
+
+    <!-- idはmenuのidと一緒にしなければならない-->
+    <fragment android:id="@+id/navi_main"
+        android:name="com.example.campuspost.main.MainFragment"
+        android:label="Fragment1"/>
+
+    <fragment android:id="@+id/navi_notification"
+        android:name="com.example.campuspost.notification.NotificationFragment"
+        android:label="Fragment2"/>
+
+    <fragment android:id="@+id/navi_chat"
+        android:name="com.example.campuspost.message.MessageFragment"
+        android:label="Fragment3"/>
+
+    <fragment android:id="@+id/navi_profile"
+        android:name="com.example.campuspost.my_postfolio.MyProfileFragment"
+        android:label="Fragment4"/>
+
+</navigation>
